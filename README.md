@@ -23,8 +23,9 @@ By leveraging advanced data analytics, this platform improves user experience, e
    - Use past ratings and reviews from travelers to provide better recommendations..
 
 3. **Safety Alerts and Location Tracking**:
-   - Delivers real-time alerts for scams, theft-prone areas, and other safety concerns using location tracking.
-   - Suggests nearby locations and attractions.
+   - Automatically delivers real-time alerts and warnings for scams, theft-prone areas, and other safety concerns using location tracking.
+   - Enable tourists to report the scams and risks that they experienced by adding the exact location.
+   - Enable tourists to scan the sign boards.
 
 4. **AR Historical Places Viewer**:
    - Offers immersive AR experiences for exploring historical sites with detailed information overlays.
