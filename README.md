@@ -28,7 +28,7 @@ By leveraging advanced data analytics, this platform improves user experience, e
 
 4. **AR Historical Places Viewer**:
    - Offers immersive AR experiences for exploring historical sites with detailed information overlays.
-   - Includes offline AR content access for areas with limited internet connectivity.
+   - Uses VPS technology to scan the surroundings through the phone’s camera, displaying nearby historical places in AR with real-time distance calculations compared to the user’s current location.
 
 ---
 
