@@ -19,8 +19,8 @@ By leveraging advanced data analytics, this platform improves user experience, e
    - Provides an intuitive interface for efficient trip planning.
 
 2. **Reputation-Based Recommendations**:
-   - Matches tourists with travel agencies using **Natural Language Processing (NLP)** and reputation management algorithms.
-   - Ensures high-quality and reliable services for users.
+   - Analyze tourists' needs and preferences deeply intead of basic bugest and loaction to recommend the best travel agencies or partners for their travel.
+   - Use past ratings and reviews from travelers to provide better recommendations..
 
 3. **Safety Alerts and Location Tracking**:
    - Delivers real-time alerts for scams, theft-prone areas, and other safety concerns using location tracking.
