@@ -45,13 +45,6 @@ By leveraging **Artificial Intelligence (AI)** and advanced data analytics, this
 - **Optical Character Recognition (OCR)**: For converting visual signboard data
 - **Web and Mobile Applications**: User-friendly front-end for trip planning and recommendations
 - **APIs and Data Integration**: Real-time data on hotels, transport, and local attractions
-
----
-
-## Benefits
-### For Tourists
-- Simplifies trip planning and enhances the overall travel experience.
-- Ensures safety and reliability through real-time alerts.
 - Immersive exploration of historical and cultural landmarks.
 
 ### For Tourism Businesses
