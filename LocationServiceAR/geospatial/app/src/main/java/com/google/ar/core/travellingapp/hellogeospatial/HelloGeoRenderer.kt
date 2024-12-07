@@ -277,9 +277,7 @@ class HelloGeoRenderer(val activity: HelloGeoActivity) :
         throwable.printStackTrace()
         null
       }
-    // Get the nearest restaurants from the current location
-    // getNearbyRestaurants(currentLat, currentLng)
-    // Place the earth anchor at the same altitude as that of the camera to make it easier to view.
+     
     val altitude = earth.cameraGeospatialPose.altitude - 1
     // The rotation quaternion of the anchor in the East-Up-South (EUS) coordinate system.
     val qx = 0f
@@ -330,11 +328,7 @@ class HelloGeoRenderer(val activity: HelloGeoActivity) :
   }
 
   private fun SampleRender.renderTextAtAnchor(anchor: Anchor, name: String) {
-    // Set up text rendering here
-    // This could involve creating a 3D text mesh or using a UI overlay for the name.
-    // For simplicity, let's assume you render it as a 3D mesh above the anchor.
-
-    // Example: Offset slightly above the anchor to render the name
+     
     val namePosition = anchor.pose.translation
     val textOffset = floatArrayOf(0f, 0.2f, 0f) // Position the name above the anchor
     Matrix.translateM(modelMatrix, 0, namePosition[0], namePosition[1], namePosition[2])
@@ -360,56 +354,7 @@ class HelloGeoRenderer(val activity: HelloGeoActivity) :
   }
 
 
-//  private fun SampleRender.renderCompassAtAnchor(anchor: Anchor, bitmap: Bitmap) {
-//    // Generate the texture from the bitmap using the provided function
-//    val compassTexture = createTextureFromBitmap(this, bitmap)
-//
-//    // Bind the generated texture to the shader
-//    virtualObjectShader.setTexture("u_Texture", compassTexture)
-//
-//    // Get the current pose of the Anchor in world space
-//    anchor.pose.toMatrix(modelMatrix, 0)
-//
-//    // Calculate model/view/projection matrices
-//    Matrix.multiplyMM(modelViewMatrix, 0, viewMatrix, 0, modelMatrix, 0)
-//    Matrix.multiplyMM(modelViewProjectionMatrix, 0, projectionMatrix, 0, modelViewMatrix, 0)
-//
-//    // Update shader properties with the model-view-projection matrix
-//    virtualObjectShader.setMat4("u_ModelViewProjection", modelViewProjectionMatrix)
-//
-//    // Draw the object with the updated shader
-//    draw(virtualObjectMesh, virtualObjectShader, virtualSceneFramebuffer)
-//  }
-
-//  private fun SampleRender.renderCompassAtAnchor(anchor: Anchor, bitmap: Bitmap) {
-//    // Step 1: Generate a texture from the bitmap
-//    val compassTexture = createTextureFromBitmap(this, bitmap)
-//
-//    // Step 2: Create a shader and bind the bitmap texture specifically for the compass
-//    val compassShader = Shader.createFromAssets(
-//      this,
-//      "shaders/2d_text_vertex_shader.vert", // Vertex shader for a flat object
-//      "shaders/2d_text_fragment_shader.frag", // Fragment shader for texture rendering
-//      null
-//    ).setTexture("u_Texture", compassTexture)
-//
-//    // Step 3: Get the current pose of the anchor in world space
-//    anchor.pose.toMatrix(modelMatrix, 0)
-//
-//    // Step 4: Set up model/view/projection matrices
-//    Matrix.multiplyMM(modelViewMatrix, 0, viewMatrix, 0, modelMatrix, 0)
-//    Matrix.multiplyMM(modelViewProjectionMatrix, 0, projectionMatrix, 0, modelViewMatrix, 0)
-//
-//    // Step 5: Update the shader with the model-view-projection matrix for the compass
-//    compassShader.setMat4("u_ModelViewProjection", modelViewProjectionMatrix)
-//
-//    // Step 6: Create a flat mesh (like a 2D quad) to render the compass bitmap
-//
-//
-//    // Step 7: Draw the compass mesh with its shader
-//    draw(virtualObjectMesh, compassShader, virtualSceneFramebuffer)
-//  }
-
+ 
   private fun SampleRender.renderCompassAtAnchor(anchor: Anchor, bitmap: Bitmap) {
     // Step 1: Generate a texture from the bitmap
     plasceNameTexture =
