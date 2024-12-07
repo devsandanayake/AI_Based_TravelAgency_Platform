@@ -18,7 +18,7 @@ By leveraging advanced data analytics, this platform improves user experience, e
    - Generates personalized travel itineraries based on user preferences and real-time factors like weather.
    - Provides an intuitive interface for efficient trip planning.
 
-2. **Reputation-Based Recommendations**:
+2. **Travel/Agency Recommendations**:
    - Analyze tourists' needs and preferences deeply intead of basic bugest and loaction to recommend the best travel agencies or partners for their travel.
    - Use past ratings and reviews from travelers to provide better recommendations..
 
