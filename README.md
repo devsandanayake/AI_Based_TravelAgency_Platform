@@ -50,3 +50,6 @@ By leveraging **Artificial Intelligence (AI)** and advanced data analytics, this
 ### For Tourism Businesses
 - Promotes fair competition by providing equitable visibility.
 - Leverages AI to connect with the right target audience.
+
+### Architectural Diagram
+![Architectural Diagram](Architectural%20Diagram.jpg "AI-Powered Travel Platform Architecture")
