@@ -9,13 +9,13 @@ The platform serves as a **one-stop solution** for tourists to:
 - Access real-time safety alerts and updates.
 - Explore historical and cultural sites using cutting-edge **Augmented Reality (AR)** technology.
 
-By leveraging **Artificial Intelligence (AI)** and advanced data analytics, this platform improves user experience, enhances safety, and promotes equitable visibility for all tourism-related businesses, regardless of size.
+By leveraging advanced data analytics, this platform improves user experience, enhances safety, and promotes equitable visibility for all tourism-related businesses, regardless of size.
 
 ---
 
 ## Key Features
 1. **Smart Trip Planner**:
-   - Generates personalized travel itineraries based on user preferences, budget, and real-time factors like weather.
+   - Generates personalized travel itineraries based on user preferences and real-time factors like weather.
    - Provides an intuitive interface for efficient trip planning.
 
 2. **Reputation-Based Recommendations**:
@@ -43,8 +43,7 @@ By leveraging **Artificial Intelligence (AI)** and advanced data analytics, this
 - **Artificial Intelligence**: Machine Learning, NLP
 - **Augmented Reality (AR)**: Geo AR for location-based overlays
 - **Optical Character Recognition (OCR)**: For converting visual signboard data
-- **Web and Mobile Applications**: User-friendly front-end for trip planning and recommendations
-- **APIs and Data Integration**: Real-time data on hotels, transport, and local attractions
+- **Web Application**: NextJs
 - Immersive exploration of historical and cultural landmarks.
 
 ### For Tourism Businesses
