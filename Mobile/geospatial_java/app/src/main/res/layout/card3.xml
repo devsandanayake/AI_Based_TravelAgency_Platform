@@ -1,0 +1,326 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.google.ar.core.examples.java.CardActivity3">
+
+    <data>
+        <!-- Variables for data binding (if needed) -->
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white">
+
+        <!-- Card with Image and Text -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card"
+            android:layout_width="match_parent"
+            android:layout_height="160dp"
+            app:cardBackgroundColor="@color/blue"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/next"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="10dp"
+                android:src="@drawable/home" />
+
+            <TextView
+                android:id="@+id/us"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:fontFamily="@font/worksansbold"
+                android:text="Scan Signboards"
+                android:textColor="@color/white"
+                android:textSize="25sp"
+                android:layout_gravity="top|center" />
+
+            <TextView
+                android:id="@+id/us1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="60dp"
+                android:layout_marginStart="10dp"
+                android:fontFamily="@font/worksansmedium"
+                android:text="Use Optical Character Recognition Technology to Scan Signboards and Convert them to Text."
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/us" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/icon"
+                android:layout_width="100dp"
+                android:layout_height="35dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="10dp"
+                app:cardBackgroundColor="@color/card_background"
+                android:layout_gravity="right|bottom"
+                app:cardCornerRadius="15dp"
+                app:layout_constraintStart_toEndOf="@+id/us1"
+                app:layout_constraintTop_toBottomOf="@+id/us">
+
+                <ImageView
+                    android:id="@+id/imageView5"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_gravity="left|center"
+                    android:layout_marginStart="3dp"
+                    app:srcCompat="@drawable/ic5" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right|center"
+                    android:layout_marginEnd="8dp"
+                    android:fontFamily="@font/worksansbold"
+                    android:text="Reporter"
+                    android:textColor="@color/black"
+                    android:textSize="12sp" />
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                android:id="@+id/icon2"
+                android:layout_width="120dp"
+                android:layout_height="35dp"
+              android:layout_marginEnd="120dp"
+                android:layout_marginBottom="10dp"
+                app:cardBackgroundColor="@color/card_background"
+                android:layout_gravity="right|bottom"
+                app:cardCornerRadius="15dp"
+                app:layout_constraintStart_toEndOf="@+id/us1"
+                app:layout_constraintTop_toBottomOf="@+id/us">
+
+                <ImageView
+                    android:id="@+id/imageView6"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_gravity="left|center"
+                    android:layout_marginStart="3dp"
+                    app:srcCompat="@drawable/ic5" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right|center"
+                    android:layout_marginEnd="8dp"
+                    android:fontFamily="@font/worksansbold"
+                    android:text="About area"
+                    android:textColor="@color/black"
+                    android:textSize="12sp" />
+            </androidx.cardview.widget.CardView>
+
+        </androidx.cardview.widget.CardView>
+
+        <!-- Background ImageView -->
+        <ImageView
+            android:id="@+id/imageView8"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="16dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ca2"
+            app:layout_constraintBottom_toTopOf="@id/capture_image"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/card" />
+
+        <!-- Scrollable CardView for Text -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardi"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardBackgroundColor="@color/card_background"
+            android:layout_margin="16dp"
+            android:layout_marginTop="16dp"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="5dp"
+            app:layout_constraintTop_toBottomOf="@id/card">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp"
+                android:background="@color/white">
+
+                <ImageView
+                    android:id="@+id/image_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:scaleType="centerCrop"
+                    android:layout_marginTop="10dp"
+                    app:srcCompat="@drawable/sign" />
+
+                <ProgressBar
+                    android:id="@+id/progressBar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="16dp"
+                    android:visibility="gone"
+                    android:indeterminate="true"
+                    android:indeterminateTint="@color/blue" />
+
+                <ScrollView
+                    android:id="@+id/scr"
+                    android:layout_width="match_parent"
+                    android:layout_height="170dp"
+                    android:layout_marginTop="15dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+                        <ProgressBar
+                            android:id="@+id/progress"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:visibility="gone"
+                            android:indeterminateTint="@color/blue"
+                            android:gravity="center" />
+                        <TextView
+                            android:id="@+id/text_view"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/worksansbold"
+                            android:textSize="16sp"
+                            android:gravity="center"
+                            android:textAlignment="center"
+                            android:textColor="@color/black"
+                            android:text="this is text signboard " />
+
+
+                        <TextView
+                            android:id="@+id/translated_text_view"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="16dp"
+                            android:fontFamily="@font/worksansbold"
+                            android:textAlignment="center"
+                            android:textSize="16sp"
+                            android:textColor="@color/blue"
+                            android:gravity="center"
+                            android:text="translated text"
+                             />
+
+                    </LinearLayout>
+                </ScrollView>
+
+
+                <!-- Buttons for selecting languages -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="5dp"
+                    android:gravity="center">
+
+                    <Button
+                        android:id="@+id/btn_chinese"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Chinese"
+                        android:textAllCaps="false"
+                        android:layout_margin="8dp"
+                        android:background="@drawable/button_background"
+                        android:textColor="@color/white" />
+
+                    <Button
+                        android:id="@+id/btn_spanish"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Spanish"
+                        android:textAllCaps="false"
+                        android:layout_margin="8dp"
+                        android:background="@drawable/button_background"
+                        android:textColor="@color/white" />
+
+                    <Button
+                        android:id="@+id/btn_german"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="German"
+                        android:textAllCaps="false"
+                        android:layout_margin="8dp"
+                        android:background="@drawable/button_background"
+                        android:textColor="@color/white" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center">
+
+                    <Button
+                        android:id="@+id/btn_tamil"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Tamil"
+                        android:textAllCaps="false"
+                        android:layout_margin="8dp"
+                        android:background="@drawable/button_background"
+                        android:textColor="@color/white" />
+
+                    <Button
+                        android:id="@+id/btn_hindi"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Hindi"
+                        android:textAllCaps="false"
+                        android:layout_margin="8dp"
+                        android:background="@drawable/button_background"
+                        android:textColor="@color/white" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+
+        <!-- Capture and Detect buttons -->
+
+        <Button
+            android:id="@+id/capture_image"
+            android:layout_width="175dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/buttonshine"
+            android:elevation="3dp"
+            android:fontFamily="@font/worksansbold"
+            android:text="Capture"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toStartOf="@+id/detect_text_image_btn"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cardi" />
+
+        <Button
+            android:id="@+id/detect_text_image_btn"
+            android:layout_width="175dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/buttonshine"
+            android:elevation="3dp"
+            android:fontFamily="@font/worksansbold"
+            android:text="Detect"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cardi" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
