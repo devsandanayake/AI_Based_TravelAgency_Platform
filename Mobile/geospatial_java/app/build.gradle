@@ -1,0 +1,98 @@
+/*
+ * Copyright 2017 Google LLC
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+apply plugin: 'com.android.application'
+apply plugin: 'com.google.gms.google-services'
+
+android {
+    namespace "com.google.ar.core.examples.java.geospatial"
+    compileSdkVersion 35
+    defaultConfig {
+        applicationId "com.google.ar.core.examples.java.geospatial"
+
+        // AR Optional apps must declare minSdkVersion >= 14.
+        // AR Required apps must declare minSdkVersion >= 24.
+        minSdkVersion 28
+        targetSdkVersion 35
+        versionCode 1
+        versionName '1.0'
+        multiDexEnabled true
+        vectorDrawables.useSupportLibrary true
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+    buildFeatures{
+        dataBinding = true
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    
+    // Add this block to handle resource conflicts
+    aaptOptions {
+        noCompress "tflite"
+        ignoreAssetsPattern '!.svn:!.git:!.ds_store:!*.scc:.*:!CVS:!thumbs.db:!picasa.ini:!*~'
+    }
+
+    // Add this to prevent resource conflicts
+    androidResources {
+        noCompress 'tflite'
+        ignoreAssetsPattern '!.svn:!.git:!.ds_store:!*.scc:.*:!CVS:!thumbs.db:!picasa.ini:!*~'
+    }
+}
+
+dependencies {
+    implementation project(':geospatial')
+    
+    // ARCore (Google Play Services for AR) library.
+    implementation 'com.google.ar:core:1.46.0'
+    implementation 'com.google.android.gms:play-services-location:21.3.0'
+    implementation 'com.google.android.gms:play-services-auth:19.0.0'
+
+    // Geospatial dependencies for Android
+    implementation 'org.locationtech.jts:jts-core:1.19.0'
+    implementation 'org.osmdroid:osmdroid-android:6.1.16'
+    implementation 'org.apache.commons:commons-lang3:3.12.0'
+    implementation 'com.google.maps.android:android-maps-utils:2.3.0'
+    implementation 'com.google.android.gms:play-services-maps:18.1.0'
+
+    // Kotlin dependencies
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:1.8.20"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.8.20"
+
+    // Obj - a simple Wavefront OBJ file loader
+    // https://github.com/javagl/Obj
+    implementation 'de.javagl:obj:0.4.0'
+
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'com.google.android.material:material:1.12.0'
+    implementation 'androidx.concurrent:concurrent-futures:1.1.0'
+    implementation 'com.google.guava:guava:31.1-android'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    implementation 'com.google.firebase:firebase-auth:23.1.0'
+    implementation 'com.google.firebase:firebase-database:21.0.0'
+    implementation 'com.google.firebase:firebase-storage:21.0.1'
+    implementation 'com.github.bumptech.glide:glide:4.12.0'
+    implementation 'androidx.activity:activity:1.6.0'
+    implementation 'com.android.volley:volley:1.2.1'
+    implementation 'com.google.mlkit:text-recognition:16.0.0'
+    implementation 'com.android.support:multidex:2.0.1'
+    implementation 'com.google.mlkit:translate:17.0.3'
+}

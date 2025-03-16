@@ -1,0 +1,356 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".HomeActivity">
+
+    <!-- Top static profile section -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/profile_section"
+        android:layout_width="match_parent"
+        android:layout_height="160dp"
+        android:background="@color/blue"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <TextView
+            android:id="@+id/us"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/worksansmedium"
+            android:text="Travel.com"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <!-- Username -->
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="81dp"
+            android:layout_height="72dp"
+            android:layout_marginStart="12dp"
+            android:contentDescription="Profile Image"
+            android:src="@drawable/profile"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:id="@+id/username"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/worksansbold"
+            android:text="User Name"
+            android:textColor="@color/white"
+            android:textSize="12sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView4" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/icon1"
+            android:layout_width="100dp"
+            app:cardCornerRadius="15dp"
+            android:layout_height="35dp"
+            app:cardBackgroundColor="@color/card_background"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/username" >
+
+            <ImageView
+                android:id="@+id/imageView3"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginStart="5dp"
+                android:layout_gravity="left|center"
+                app:srcCompat="@drawable/ic1" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right|center"
+                android:layout_marginEnd="10dp"
+                android:fontFamily="@font/worksansbold"
+                android:text="Agencies"
+                android:textColor="@color/black"
+                android:textSize="12sp" />
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/icon2"
+            android:layout_width="80dp"
+            android:layout_height="35dp"
+            android:layout_marginStart="5dp"
+            app:cardBackgroundColor="@color/card_background"
+            android:layout_marginTop="16dp"
+            app:cardCornerRadius="15dp"
+            app:layout_constraintStart_toEndOf="@+id/icon1"
+            app:layout_constraintTop_toBottomOf="@+id/username">
+
+            <ImageView
+                android:id="@+id/imageView1"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_gravity="left|center"
+                android:layout_marginStart="5dp"
+                app:srcCompat="@drawable/ic2" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right|center"
+                android:layout_marginEnd="10dp"
+                android:fontFamily="@font/worksansbold"
+                android:text="Places"
+                android:textColor="@color/black"
+                android:textSize="12sp" />
+        </androidx.cardview.widget.CardView>
+        <androidx.cardview.widget.CardView
+            android:id="@+id/icon3"
+            android:layout_width="100dp"
+            android:layout_height="35dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="16dp"
+            app:cardBackgroundColor="@color/card_background"
+            app:cardCornerRadius="15dp"
+            app:layout_constraintStart_toEndOf="@+id/icon2"
+            app:layout_constraintTop_toBottomOf="@+id/username">
+
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_gravity="left|center"
+                android:layout_marginStart="5dp"
+                app:srcCompat="@drawable/ic3" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right|center"
+                android:layout_marginEnd="7dp"
+                android:fontFamily="@font/worksansbold"
+                android:text="Signboard"
+                android:textColor="@color/black"
+                android:textSize="12sp" />
+        </androidx.cardview.widget.CardView>
+        <androidx.cardview.widget.CardView
+            android:id="@+id/icon4"
+            android:layout_width="100dp"
+            android:layout_height="35dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="16dp"
+            app:cardBackgroundColor="@color/card_background"
+            app:cardCornerRadius="15dp"
+            app:layout_constraintStart_toEndOf="@+id/icon3"
+            app:layout_constraintTop_toBottomOf="@+id/username">
+
+            <ImageView
+                android:id="@+id/imageView5"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_gravity="left|center"
+                android:layout_marginStart="5dp"
+                app:srcCompat="@drawable/ic4" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right|center"
+                android:layout_marginEnd="7dp"
+                android:fontFamily="@font/worksansbold"
+                android:text="Place.info"
+                android:textColor="@color/black"
+                android:textSize="12sp" />
+        </androidx.cardview.widget.CardView>
+
+        <ImageView
+            android:id="@+id/notification"
+            android:layout_width="43dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/notification" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- Scrollable content section -->
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintTop_toBottomOf="@id/profile_section"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <!-- scrollable content here -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/worksansbold"
+                android:textColor="@color/black"
+                android:text="Suggest destinations"
+                android:textSize="16sp"
+                android:padding="10dp" />
+            <FrameLayout
+                android:id="@+id/frame1"
+                android:layout_width="match_parent"
+                android:layout_height="200dp">
+
+                <!-- ImageView -->
+                <ImageView
+                    android:id="@+id/imageView6"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:padding="5dp"
+                    app:srcCompat="@drawable/ca1" />
+
+                <!-- Text on top of the ImageView -->
+                <TextView
+                    android:id="@+id/overlay_text"
+                    android:layout_width="240dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="top"
+                    android:background="@android:color/transparent"
+                    android:fontFamily="@font/worksansbold"
+                    android:gravity="top"
+                    android:padding="15dp"
+                    android:text="Suggest destination travel plan based on your answers"
+                    android:textColor="@color/white"
+                    android:textSize="16sp" />
+            </FrameLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/worksansbold"
+                android:textColor="@color/black"
+                android:text="Quick  and easy trip planner"
+                android:textSize="16sp"
+                android:padding="10dp" />
+            <FrameLayout
+                android:id="@+id/frame2"
+                android:layout_width="match_parent"
+                android:layout_height="200dp">
+
+                <!-- ImageView -->
+                <ImageView
+                    android:id="@+id/imageView7"
+                    android:layout_width="match_parent"
+                    android:layout_height="220dp"
+                    android:padding="5dp"
+                    app:srcCompat="@drawable/ca02" />
+
+                <!-- Text on top of the ImageView -->
+                <TextView
+                    android:id="@+id/overlay_text1"
+                    android:layout_width="240dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="top"
+                    android:background="@android:color/transparent"
+                    android:fontFamily="@font/worksansbold"
+                    android:gravity="top"
+                    android:padding="15dp"
+                    android:text="Recommend suitable travel agencies"
+                    android:textColor="@color/white"
+                    android:textSize="16sp" />
+            </FrameLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/worksansbold"
+                android:textColor="@color/black"
+                android:text="Signboard Reader"
+                android:textSize="16sp"
+                android:padding="10dp" />
+            <FrameLayout
+                android:id="@+id/frame3"
+                android:layout_width="match_parent"
+                android:layout_height="200dp">
+
+                <!-- ImageView -->
+
+                <!-- Text on top of the ImageView -->
+                <ImageView
+                    android:id="@+id/imageView9"
+                    android:layout_width="match_parent"
+                    android:layout_height="245dp"
+                    android:padding="5dp"
+                    app:srcCompat="@drawable/ca3" />
+
+                <TextView
+                    android:id="@+id/overlay_text2"
+                    android:layout_width="240dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="top"
+                    android:background="@android:color/transparent"
+                    android:fontFamily="@font/worksansbold"
+                    android:gravity="top"
+                    android:padding="15dp"
+                    android:text="Scan signboards and convert to text"
+                    android:textColor="@color/white"
+                    android:textSize="16sp" />
+            </FrameLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/worksansbold"
+                android:textColor="@color/black"
+                android:text="More about Places"
+                android:textSize="16sp"
+                android:padding="10dp" />
+            <FrameLayout
+                android:id="@+id/frame4"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_marginBottom="10dp">
+
+                <!-- ImageView -->
+
+                <!-- Text on top of the ImageView -->
+                <ImageView
+                    android:id="@+id/imageView10"
+                    android:layout_width="match_parent"
+                    android:layout_height="270dp"
+                    android:padding="5dp"
+                    app:srcCompat="@drawable/ca4" />
+
+                <TextView
+                    android:id="@+id/overlay_text3"
+                    android:layout_width="240dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="top"
+                    android:background="@android:color/transparent"
+                    android:fontFamily="@font/worksansbold"
+                    android:gravity="top"
+                    android:padding="15dp"
+                    android:text="Use AR to obtain information about places"
+                    android:textColor="@color/white"
+                    android:textSize="16sp" />
+            </FrameLayout>
+        </LinearLayout>
+    </ScrollView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

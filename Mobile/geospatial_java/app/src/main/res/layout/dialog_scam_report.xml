@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="@android:color/white">
+
+<!--    <ImageView-->
+<!--        android:id="@+id/scam_report_image"-->
+<!--        android:layout_width="80dp"-->
+<!--        android:layout_height="80dp"-->
+<!--        android:layout_gravity="top|center"-->
+<!--        android:scaleType="centerCrop"-->
+<!--        android:src="@drawable/img" />-->
+
+    <RatingBar
+        android:id="@+id/rating_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:numStars="5"
+        android:stepSize="0.5"
+        android:rating="0"
+        />
+    <TextView
+        android:id="@+id/scam_report_message"
+        android:textSize="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/worksansmedium"
+        android:textColor="@android:color/black"
+        android:paddingTop="8dp" />
+
+    <TextView
+
+        android:textSize="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="High Rating areas"
+        android:textAlignment="center"
+        android:fontFamily="@font/worksansbold"
+        android:textColor="@android:color/black"
+        android:paddingTop="16dp" />
+    <TextView
+        android:id="@+id/top_locations"
+        android:textSize="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/worksansmedium"
+        android:textColor="@android:color/black"
+        android:paddingTop="8dp" />
+</LinearLayout>

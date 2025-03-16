@@ -1,0 +1,119 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <!-- Location Title -->
+    <TextView
+        android:id="@+id/locationText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Loading Location..."
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="16dp" />
+
+    <!-- Speech Bubble for Message -->
+    <RelativeLayout
+        android:id="@+id/speechBubble"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/locationText"
+        android:layout_centerHorizontal="true"
+        android:padding="16dp"
+        android:background="@drawable/speech_bubble">
+
+        <TextView
+            android:id="@+id/messageText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Loading message..."
+            android:textSize="16sp"
+            android:textColor="#000" />
+    </RelativeLayout>
+
+    <!-- Triangle Tail for Speech Bubble -->
+    <ImageView
+        android:id="@+id/speechTail"
+        android:layout_width="16dp"
+        android:layout_height="16dp"
+        android:layout_below="@id/speechBubble"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/speech_tail" />
+
+    <!-- Reviews List Container -->
+    <LinearLayout
+        android:id="@+id/reviewContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/speechTail"
+        android:layout_marginTop="16dp"
+        android:orientation="vertical"
+        android:padding="8dp">
+
+        <ListView
+            android:id="@+id/reviewsListView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:divider="@android:color/darker_gray"
+            android:dividerHeight="1dp"/>
+    </LinearLayout>
+
+    <!-- Good News (Thumbs Up) Section -->
+    <LinearLayout
+        android:id="@+id/goodNewsLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/reviewContainer"
+        android:layout_marginTop="16dp"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="40dp"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <ImageView
+            android:id="@+id/thumbsUpIcon"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/thumbs_up" />
+
+        <TextView
+            android:id="@+id/goodNewsText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0%"
+            android:textSize="18sp"
+            android:textColor="#4CAF50"
+            android:layout_marginStart="8dp" />
+    </LinearLayout>
+
+    <!-- Bad News (Thumbs Down) Section -->
+    <LinearLayout
+        android:id="@+id/badNewsLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/reviewContainer"
+        android:layout_marginTop="16dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="40dp"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <ImageView
+            android:id="@+id/thumbsDownIcon"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/thumbs_down" />
+
+        <TextView
+            android:id="@+id/badNewsText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0%"
+            android:textSize="18sp"
+            android:textColor="#F44336"
+            android:layout_marginStart="8dp" />
+    </LinearLayout>
+
+</RelativeLayout>
