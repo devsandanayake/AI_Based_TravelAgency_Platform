@@ -1,0 +1,9 @@
+<resources>
+    <!-- Existing styles -->
+
+    <style name="CustomButtonStyle" parent="Widget.AppCompat.Button">
+        <item name="android:background">@android:color/holo_blue_light</item> <!-- Light blue background -->
+        <item name="android:textColor">@android:color/white</item> <!-- White text color -->
+        <item name="android:textSize">16sp</item> <!-- Adjust text size if needed -->
+    </style>
+</resources>

@@ -1,0 +1,1221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context="com.google.ar.core.examples.java.CardActivity2">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/profile_section"
+        android:layout_width="match_parent"
+        android:layout_height="160dp"
+        android:background="@color/blue"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+        <ImageView
+            android:id="@+id/next"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/home" />
+        <TextView
+            android:id="@+id/us"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/worksansbold"
+            android:text="Travel Agencies"
+            android:textColor="@color/white"
+            android:textSize="25sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_marginTop="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/us"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/us1"
+            android:layout_width="match_parent"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/worksansmedium"
+            android:gravity="center"
+            android:text="Fill out the following form to get your recommended agencies in Sri Lanka."
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.419"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/us" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/icon4"
+            android:layout_width="100dp"
+            android:layout_height="35dp"
+            android:layout_marginTop="6dp"
+            android:layout_marginEnd="16dp"
+            android:background="@color/white"
+            app:cardBackgroundColor="@color/card_background"
+            app:cardCornerRadius="15dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/us1">
+
+                        <ImageView
+                            android:id="@+id/imageView5"
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:layout_gravity="left|center"
+                            android:layout_marginStart="10dp"
+                            app:srcCompat="@drawable/ic1" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="right|center"
+                            android:layout_marginEnd="7dp"
+                            android:fontFamily="@font/worksansbold"
+                            android:text="Agencies"
+                            android:textColor="@color/black"
+                            android:textSize="12sp" />
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/icon5"
+            android:layout_width="105dp"
+            android:layout_height="35dp"
+            android:layout_marginTop="6dp"
+            android:layout_marginEnd="20dp"
+            android:background="@color/white"
+            app:cardBackgroundColor="@color/card_background"
+            app:cardCornerRadius="15dp"
+            app:layout_constraintEnd_toStartOf="@+id/icon4"
+            app:layout_constraintTop_toBottomOf="@+id/us1">
+
+                                    <ImageView
+                                        android:id="@+id/imageView0"
+                                        android:layout_width="25dp"
+                                        android:layout_height="25dp"
+                                        android:layout_gravity="left|center"
+                                        android:layout_marginStart="10dp"
+                                        app:srcCompat="@drawable/ic5" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="right|center"
+                                        android:layout_marginEnd="7dp"
+                                        android:fontFamily="@font/worksansbold"
+                                        android:text="Feedback"
+                                        android:textColor="@color/black"
+                                        android:textSize="12sp" />
+        </androidx.cardview.widget.CardView>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <!-- FrameLayout for stacking CardView on top of ImageView -->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="120dp"
+        app:layout_constraintTop_toBottomOf="@id/profile_section"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <!-- ImageView as background -->
+        <ImageView
+            android:id="@+id/imageView8"
+            android:layout_width="match_parent"
+            android:layout_height="1000dp"
+            app:srcCompat="@drawable/ca2" />
+
+        <!-- Scrollable CardView -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardi"
+            android:layout_width="380dp"
+            android:layout_height="500dp"
+            app:cardBackgroundColor="@color/card_background"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginTop="50dp"
+            app:cardCornerRadius="10dp"
+            android:background="@color/white"
+            android:elevation="5dp">
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <!-- Container for questions and options -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <!-- Question 1 -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="1. Select your favorite activity?"
+                        android:textSize="18sp"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"
+                        android:layout_marginBottom="8dp" />
+
+                    <RadioGroup
+                        android:id="@+id/group1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <RadioButton
+                            android:id="@+id/rb_question1_option1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/black"
+                            android:buttonTint="@color/blue"
+                            android:text="Surfing" />
+
+                        <RadioButton
+                            android:id="@+id/rb_question1_option2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/black"
+                            android:buttonTint="@color/blue"
+                            android:text="Hiking" />
+
+                        <RadioButton
+                            android:id="@+id/rb_question1_option3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/black"
+                            android:buttonTint="@color/blue"
+                            android:text="Whale Watching" />
+
+                        <RadioButton
+                            android:id="@+id/rb_question1_option4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/black"
+                            android:buttonTint="@color/blue"
+                            android:text="Cultural Tour" />
+                        <RadioButton
+                            android:id="@+id/rb_question1_option5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/black"
+                            android:buttonTint="@color/blue"
+                            android:text="Beach Relaxation" />
+
+                        <RadioButton
+                            android:id="@+id/rb_question1_option6"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/black"
+                            android:buttonTint="@color/blue"
+                            android:text="Wildlife Safari" />
+
+                        <RadioButton
+                            android:id="@+id/rb_question1_option7"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/black"
+                            android:buttonTint="@color/blue"
+                            android:text="Tea Plantation Tour" />
+
+                        <RadioButton
+                            android:id="@+id/rb_question1_option8"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/black"
+                            android:buttonTint="@color/blue"
+                            android:text="Scuba Diving" />
+                        <RadioButton
+                            android:id="@+id/rb_question1_option9"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/black"
+                            android:buttonTint="@color/blue"
+                            android:text="Historical Site Visit" />
+
+                        <RadioButton
+                            android:id="@+id/rb_question1_option10"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/black"
+                            android:buttonTint="@color/blue"
+                            android:text="Lagoon Boat Ride" />
+
+                        <RadioButton
+                            android:id="@+id/rb_question1_option11"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/black"
+                            android:buttonTint="@color/blue"
+                            android:text="Bird Watching" />
+
+                        <RadioButton
+                            android:id="@+id/rb_question1_option12"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/black"
+                            android:buttonTint="@color/blue"
+                            android:text="Deep-Sea Fishing" />
+                        <RadioButton
+                            android:id="@+id/rb_question1_option13"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/black"
+                            android:buttonTint="@color/blue"
+                            android:text="City Walking Tour" />
+
+                        <RadioButton
+                            android:id="@+id/rb_question1_option14"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/black"
+                            android:buttonTint="@color/blue"
+                            android:text="Kite Surfing" />
+
+                        <RadioButton
+                            android:id="@+id/rb_question1_option15"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/black"
+                            android:buttonTint="@color/blue"
+                            android:text="Temple Visits" />
+
+                        <RadioButton
+                            android:id="@+id/rb_question1_option16"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/black"
+                            android:buttonTint="@color/blue"
+                            android:text="Cooking Classes" />
+                        <RadioButton
+                            android:id="@+id/rb_question1_option17"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/black"
+                            android:buttonTint="@color/blue"
+                            android:text="Village Safari" />
+
+                        <RadioButton
+                            android:id="@+id/rb_question1_option18"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/black"
+                            android:buttonTint="@color/blue"
+                            android:text="Ayurvedic Spa Retreat" />
+
+                        <RadioButton
+                            android:id="@+id/rb_question1_option19"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/black"
+                            android:buttonTint="@color/blue"
+                            android:text="Wildlife Photography" />
+
+                        <RadioButton
+                            android:id="@+id/rb_question1_option20"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/black"
+                            android:buttonTint="@color/blue"
+                            android:text="SNorkeling" />
+                    </RadioGroup>
+
+                    <!-- Question 2 -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="2. Select your budget types?"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/black"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginBottom="8dp" />
+
+                    <!-- Question 3 -->
+                    <RadioGroup
+                        android:id="@+id/group2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <RadioButton
+                            android:id="@+id/rb_question2_option1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/black"
+                            android:buttonTint="@color/blue"
+                            android:text="$0 - $100" />
+
+                        <RadioButton
+                            android:id="@+id/rb_question2_option2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/black"
+                            android:buttonTint="@color/blue"
+                            android:text="$100 - $200" />
+
+                        <RadioButton
+                            android:id="@+id/rb_question2_option3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/black"
+                            android:buttonTint="@color/blue"
+                            android:text="$200 - $300" />
+
+                        <RadioButton
+                            android:id="@+id/rb_question2_option4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/black"
+                            android:buttonTint="@color/blue"
+                            android:text="$300 - $400" />
+                        <RadioButton
+                            android:id="@+id/rb_question2_option5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/black"
+                            android:buttonTint="@color/blue"
+                            android:text="$400+" />
+                    </RadioGroup>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="3. Select number of persons ?"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/black"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginBottom="8dp" />
+
+                    <RadioGroup
+                        android:id="@+id/group3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <RadioButton
+                            android:id="@+id/rb_question3_option1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/black"
+                            android:buttonTint="@color/blue"
+                            android:text="1" />
+
+                        <RadioButton
+                            android:id="@+id/rb_question3_option2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/black"
+                            android:buttonTint="@color/blue"
+                            android:text="2" />
+
+                        <RadioButton
+                            android:id="@+id/rb_question3_option3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/black"
+                            android:buttonTint="@color/blue"
+                            android:text="3" />
+
+                        <RadioButton
+                            android:id="@+id/rb_question3_option4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/black"
+                            android:buttonTint="@color/blue"
+                            android:text="4" />
+
+                        <RadioButton
+                            android:id="@+id/rb_question3_option5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/black"
+                            android:buttonTint="@color/blue"
+                            android:text="5" />
+
+                        <RadioButton
+                            android:id="@+id/rb_question3_option6"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/black"
+                            android:buttonTint="@color/blue"
+                            android:text="6" />
+
+                        <RadioButton
+                            android:id="@+id/rb_question3_option7"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/black"
+                            android:buttonTint="@color/blue"
+                            android:text="7" />
+
+                        <RadioButton
+                            android:id="@+id/rb_question3_option8"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/black"
+                            android:buttonTint="@color/blue"
+                            android:text="8" />
+
+                        <RadioButton
+                            android:id="@+id/rb_question3_option9"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/black"
+                            android:buttonTint="@color/blue"
+                            android:text="9" />
+
+                        <RadioButton
+                            android:id="@+id/rb_question3_option10"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/black"
+                            android:buttonTint="@color/blue"
+                            android:text="10" />
+                    </RadioGroup>
+
+                    <!-- Question 4 -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="4. Select transportation?"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/black"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginBottom="8dp" />
+
+                    <RadioGroup
+                        android:id="@+id/group4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <RadioButton
+                            android:id="@+id/rb_question4_option1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/black"
+                            android:buttonTint="@color/blue"
+                            android:text="Private Vehicle" />
+
+                        <RadioButton
+                            android:id="@+id/rb_question4_option2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/black"
+                            android:buttonTint="@color/blue"
+                            android:text="Public Transport" />
+
+                        <RadioButton
+                            android:id="@+id/rb_question4_option3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/black"
+                            android:buttonTint="@color/blue"
+                            android:text="Bike and Bicycle" />
+
+                        <RadioButton
+                            android:id="@+id/rb_question4_option4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:buttonTint="@color/blue"
+                            android:textColor="@color/black"
+                            android:text="Boat" />
+                        <RadioButton
+                            android:id="@+id/rb_question4_option5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/black"
+                            android:buttonTint="@color/blue"
+                            android:text="Train" />
+                    </RadioGroup>
+                    <!-- Question 5 -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="5. Select month?"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/black"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginBottom="8dp" />
+
+                    <RadioGroup
+                        android:id="@+id/group5"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <RadioButton
+                            android:id="@+id/rb_question5_option1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/black"
+                            android:buttonTint="@color/blue"
+                            android:text="January" />
+
+                        <RadioButton
+                            android:id="@+id/rb_question5_option2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/black"
+                            android:buttonTint="@color/blue"
+                            android:text="February" />
+
+                        <RadioButton
+                            android:id="@+id/rb_question5_option3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/black"
+                            android:buttonTint="@color/blue"
+                            android:text="March" />
+
+                        <RadioButton
+                            android:id="@+id/rb_question5_option4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/black"
+                            android:buttonTint="@color/blue"
+                            android:text="April" />
+                        <RadioButton
+                            android:id="@+id/rb_question5_option5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/black"
+                            android:buttonTint="@color/blue"
+                            android:text="May" />
+                        <RadioButton
+                            android:id="@+id/rb_question5_option6"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/black"
+                            android:buttonTint="@color/blue"
+                            android:text="June" />
+                        <RadioButton
+                            android:id="@+id/rb_question5_option7"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/black"
+                            android:buttonTint="@color/blue"
+                            android:text="July" />
+
+                        <RadioButton
+                            android:id="@+id/rb_question5_option9"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/black"
+                            android:buttonTint="@color/blue"
+                            android:text="August" />
+                        <RadioButton
+                            android:id="@+id/rb_question5_option10"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/black"
+                            android:buttonTint="@color/blue"
+                            android:text="September" />
+                        <RadioButton
+                            android:id="@+id/rb_question5_option11"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/black"
+                            android:buttonTint="@color/blue"
+                            android:text="October" />
+                        <RadioButton
+                            android:id="@+id/rb_question5_option12"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/black"
+                            android:buttonTint="@color/blue"
+                            android:text="November" />
+                        <RadioButton
+                            android:id="@+id/rb_question5_option8"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/black"
+                            android:buttonTint="@color/blue"
+                            android:text="December" />
+                    </RadioGroup>
+                    <!-- Question 6-->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="6. Select your favorite location ?"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/black"
+                        android:layout_marginBottom="8dp" />
+
+                    <RadioGroup
+                        android:id="@+id/group6"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <RadioButton
+                            android:id="@+id/rb_question6_option1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/black"
+                            android:buttonTint="@color/blue"
+                            android:text="Yala National Park" />
+
+                        <RadioButton
+                            android:id="@+id/rb_question6_option2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/black"
+                            android:buttonTint="@color/blue"
+                            android:text="Sinharaja Forest" />
+
+                        <RadioButton
+                            android:id="@+id/rb_question6_option3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/black"
+                            android:buttonTint="@color/blue"
+                            android:text="Habarana" />
+
+                        <RadioButton
+                            android:id="@+id/rb_question6_option4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/black"
+                            android:buttonTint="@color/blue"
+                            android:text="Wilpattu National Park" />
+                        <RadioButton
+                            android:id="@+id/rb_question6_option5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/black"
+                            android:buttonTint="@color/blue"
+                            android:text="Hikkaduwa" />
+
+                        <RadioButton
+                            android:id="@+id/rb_question6_option6"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/black"
+                            android:buttonTint="@color/blue"
+                            android:text="Kandy" />
+
+                        <RadioButton
+                            android:id="@+id/rb_question6_option7"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/black"
+                            android:buttonTint="@color/blue"
+                            android:text="Polonnaruwa" />
+
+                        <RadioButton
+                            android:id="@+id/rb_question6_option8"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/black"
+                            android:buttonTint="@color/blue"
+                            android:text="Anuradhapura" />
+                        <RadioButton
+                            android:id="@+id/rb_question6_option9"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/black"
+                            android:buttonTint="@color/blue"
+                            android:text="Nuwara Eliya" />
+
+                        <RadioButton
+                            android:id="@+id/rb_question6_option10"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/black"
+                            android:buttonTint="@color/blue"
+                            android:text="Colombo" />
+
+                        <RadioButton
+                            android:id="@+id/rb_question6_option11"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/black"
+                            android:buttonTint="@color/blue"
+                            android:text="Mirissa" />
+
+                        <RadioButton
+                            android:id="@+id/rb_question6_option12"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/black"
+                            android:buttonTint="@color/blue"
+                            android:text="Arugam Bay" />
+                        <RadioButton
+                            android:id="@+id/rb_question6_option13"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/black"
+                            android:buttonTint="@color/blue"
+                            android:text="Unawatuna" />
+
+                        <RadioButton
+                            android:id="@+id/rb_question6_option14"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/black"
+                            android:buttonTint="@color/blue"
+                            android:text="Kalpitiya" />
+
+                        <RadioButton
+                            android:id="@+id/rb_question6_option15"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/black"
+                            android:buttonTint="@color/blue"
+                            android:text="Bentota" />
+
+                        <RadioButton
+                            android:id="@+id/rb_question6_option16"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/black"
+                            android:buttonTint="@color/blue"
+                            android:text="Trincomalee" />
+                        <RadioButton
+                            android:id="@+id/rb_question6_option17"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/black"
+                            android:buttonTint="@color/blue"
+                            android:text="Pigeon Island" />
+
+                        <RadioButton
+                            android:id="@+id/rb_question6_option18"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/black"
+                            android:buttonTint="@color/blue"
+                            android:text="Knuckles Range" />
+                    </RadioGroup>
+                    <!-- Question 7-->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="7. Select your Health Condition ?"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/black"
+                        android:layout_marginBottom="8dp" />
+
+                    <RadioGroup
+                        android:id="@+id/group7"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <RadioButton
+                            android:id="@+id/rb_question7_option1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/black"
+                            android:buttonTint="@color/blue"
+                            android:text="Pressure" />
+
+                        <RadioButton
+                            android:id="@+id/rb_question7_option2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/black"
+                            android:buttonTint="@color/blue"
+                            android:text="Vomiting" />
+
+                        <RadioButton
+                            android:id="@+id/rb_question7_option3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/black"
+                            android:buttonTint="@color/blue"
+                            android:text="Fainting" />
+
+                        <RadioButton
+                            android:id="@+id/rb_question7_option4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/black"
+                            android:buttonTint="@color/blue"
+                            android:text="Heart Attack" />
+                        <RadioButton
+                            android:id="@+id/rb_question7_option5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/black"
+                            android:buttonTint="@color/blue"
+                            android:text="None" />
+                    </RadioGroup>
+
+                    <!-- Question 8-->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="8. Select your Accomadation Preference?"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/black"
+                        android:layout_marginBottom="8dp" />
+
+                    <RadioGroup
+                        android:id="@+id/group8"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <RadioButton
+                            android:id="@+id/rb_question8_option1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/black"
+                            android:buttonTint="@color/blue"
+                            android:text="Hotel" />
+
+                        <RadioButton
+                            android:id="@+id/rb_question8_option2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/black"
+                            android:buttonTint="@color/blue"
+                            android:text="House" />
+
+                        <RadioButton
+                            android:id="@+id/rb_question8_option3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/black"
+                            android:buttonTint="@color/blue"
+                            android:text="Villa" />
+                    </RadioGroup>
+                    <!-- Question 9-->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="9. Select Safty Concersn ?"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/black"
+                        android:layout_marginBottom="8dp" />
+
+                    <RadioGroup
+                        android:id="@+id/group9"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <RadioButton
+                            android:id="@+id/rb_question9_option1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/black"
+                            android:buttonTint="@color/blue"
+                            android:text="Heat" />
+
+                        <RadioButton
+                            android:id="@+id/rb_question9_option2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/black"
+                            android:buttonTint="@color/blue"
+                            android:text="Rain" />
+
+                        <RadioButton
+                            android:id="@+id/rb_question9_option3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/black"
+                            android:buttonTint="@color/blue"
+                            android:text="Elephants Availability" />
+
+                        <RadioButton
+                            android:id="@+id/rb_question9_option4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/black"
+                            android:buttonTint="@color/blue"
+                            android:text="None" />
+                    </RadioGroup>
+                    <!-- Question 10-->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="10. Select your Dieatary Needs ?"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/black"
+                        android:layout_marginBottom="8dp" />
+
+                    <RadioGroup
+                        android:id="@+id/group10"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <RadioButton
+                            android:id="@+id/rb_question10_option1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/black"
+                            android:buttonTint="@color/blue"
+                            android:text="Western Menu" />
+
+                        <RadioButton
+                            android:id="@+id/rb_question10_option2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/black"
+                            android:buttonTint="@color/blue"
+                            android:text="Sri Lankan Menu" />
+
+                        <RadioButton
+                            android:id="@+id/rb_question10_option3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/black"
+                            android:buttonTint="@color/blue"
+                            android:text="Indian Menu" />
+                    </RadioGroup>
+
+                    <!-- Question 11-->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="11. Select your Pet Friendly Option ?"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/black"
+                        android:layout_marginBottom="8dp" />
+
+                    <RadioGroup
+                        android:id="@+id/group11"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <RadioButton
+                            android:id="@+id/rb_question11_option1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/black"
+                            android:buttonTint="@color/blue"
+                            android:text="Yes" />
+
+                        <RadioButton
+                            android:id="@+id/rb_question11_option2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/black"
+                            android:buttonTint="@color/blue"
+                            android:text="No" />
+
+                        <RadioButton
+                            android:id="@+id/rb_question11_option3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/black"
+                            android:buttonTint="@color/blue"
+                            android:text="Maybe" />
+                    </RadioGroup>
+
+                    <!-- Question 12-->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="12. Select Connectivity ?"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/black"
+                        android:layout_marginBottom="8dp" />
+
+                    <RadioGroup
+                        android:id="@+id/group12"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <RadioButton
+                            android:id="@+id/rb_question12_option1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/black"
+                            android:buttonTint="@color/blue"
+                            android:text="Wifi" />
+
+                        <RadioButton
+                            android:id="@+id/rb_question12_option2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/black"
+                            android:buttonTint="@color/blue"
+                            android:text="Mobile Data" />
+                    </RadioGroup>
+
+                    <!-- Question 13-->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="10. Select your Language Preference ?"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/black"
+                        android:layout_marginBottom="8dp" />
+
+                    <RadioGroup
+                        android:id="@+id/group13"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <RadioButton
+                            android:id="@+id/rb_question13_option1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/black"
+                            android:buttonTint="@color/blue"
+                            android:text="English" />
+
+                        <RadioButton
+                            android:id="@+id/rb_question13_option2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/black"
+                            android:buttonTint="@color/blue"
+                            android:text="Sinhala" />
+
+                        <RadioButton
+                            android:id="@+id/rb_question13_option3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/black"
+                            android:buttonTint="@color/blue"
+                            android:text="Tamil" />
+
+                        <RadioButton
+                            android:id="@+id/rb_question13_option4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/black"
+                            android:buttonTint="@color/blue"
+                            android:text="Chinese" />
+
+                        <RadioButton
+                            android:id="@+id/rb_question13_option5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/black"
+                            android:buttonTint="@color/blue"
+                            android:text="Spanish" />
+                    </RadioGroup>
+
+                    <!-- Question 14-->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="14. Select your Shoppping Preferences ?"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/black"
+                        android:layout_marginBottom="8dp" />
+
+                    <RadioGroup
+                        android:id="@+id/group14"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <RadioButton
+                            android:id="@+id/rb_question14_option1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/black"
+                            android:buttonTint="@color/blue"
+                            android:text="High" />
+
+                        <RadioButton
+                            android:id="@+id/rb_question14_option2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/black"
+                            android:buttonTint="@color/blue"
+                            android:text="Low" />
+
+                    </RadioGroup>
+
+                    <!-- Question 15-->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="15. Select your Accessibility need ?"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/black"
+                        android:layout_marginBottom="8dp" />
+
+                    <RadioGroup
+                        android:id="@+id/group15"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <RadioButton
+                            android:id="@+id/rb_question15_option1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/black"
+                            android:buttonTint="@color/blue"
+                            android:text="Wheel Chair" />
+
+                        <RadioButton
+                            android:id="@+id/rb_question15_option2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/black"
+                            android:buttonTint="@color/blue"
+                            android:text="None" />
+
+                    </RadioGroup>
+
+                </LinearLayout>
+            </ScrollView>
+        </androidx.cardview.widget.CardView>
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="380dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:textColor="@color/white"
+            android:layout_gravity="bottom|center"
+            android:background="@drawable/buttonshine"
+            android:fontFamily="@font/worksansbold"
+            android:text="Submit"
+            android:layout_marginBottom="6dp"
+            android:textSize="22sp"
+            />
+    </FrameLayout>
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
