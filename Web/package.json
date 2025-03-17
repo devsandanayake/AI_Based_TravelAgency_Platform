@@ -10,12 +10,14 @@
   },
   "dependencies": {
     "@google/generative-ai": "^0.17.1",
+    "@types/react-icons": "^2.2.7",
     "axios": "^1.7.2",
     "daisyui": "^4.12.10",
     "firebase": "^10.12.4",
     "next": "14.2.4",
     "react": "^18",
     "react-dom": "^18",
+    "react-icons": "^5.5.0",
     "react-player": "^2.16.0",
     "recharts": "^2.12.7",
     "sweetalert2": "^11.12.3"
