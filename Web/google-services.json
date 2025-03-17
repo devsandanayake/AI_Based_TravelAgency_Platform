@@ -1,0 +1,49 @@
+{
+  "project_info": {
+    "project_number": "684264279537",
+    "firebase_url": "https://travelling-e138d-default-rtdb.firebaseio.com",
+    "project_id": "travelling-e138d",
+    "storage_bucket": "travelling-e138d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:684264279537:android:ac60bcdfe8b25d88fbc850",
+        "android_client_info": {
+          "package_name": "com.example.traveling"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBflkTNXkr4jOXVBwubw3RTEZmNNneN8Hs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:684264279537:android:0ed9f037837365fdfbc850",
+        "android_client_info": {
+          "package_name": "com.google.ar.core.examples.java.geospatial"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBflkTNXkr4jOXVBwubw3RTEZmNNneN8Hs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
