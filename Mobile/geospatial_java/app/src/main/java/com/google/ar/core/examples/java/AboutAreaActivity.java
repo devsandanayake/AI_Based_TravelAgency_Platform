@@ -195,7 +195,7 @@ private void fetchWeatherCondition() {
                     e.printStackTrace();
                     runOnUiThread(() -> {
                         progressBar.setVisibility(View.GONE); // Hide ProgressBar
-                        Toast.makeText(this, "Error: " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(this, "This area has not been reported under this alert type ! " + e.getMessage(), Toast.LENGTH_LONG).show();
                     });
                 }
             }).start();
@@ -204,7 +204,7 @@ private void fetchWeatherCondition() {
             e.printStackTrace();
             runOnUiThread(() -> {
                 progressBar.setVisibility(View.GONE); // Hide ProgressBar
-                Toast.makeText(this, "Error: " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "This area has not been reported under this alert type ! " + e.getMessage(), Toast.LENGTH_LONG).show();
             });
         }
     }
