@@ -309,12 +309,11 @@ export default function Destination() {
             </button>
           </div>
           <h5 className="text-center text-zinc-600 font-semibold text-sm leading-tight font-poppins mb-8">
-            Fill out the following form to get your recommended plans in Sri
-            Lanka.
+            Fill out the following form to get your recommended plans in Sri Lanka.
           </h5>
-          <form onSubmit={handleSubmit} className="space-y-4 w-full max-w-lg">
-            <div className="flex flex-col lg:flex-row space-y-4 lg:space-y-0 lg:space-x-4">
-              <div className="relative w-full lg:w-1/2">
+          <form onSubmit={handleSubmit} className="space-y-6 w-full max-w-lg">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+              <div className="relative">
                 <label className="text-gray-600" htmlFor="destination">
                   Destination
                 </label>
@@ -329,8 +328,7 @@ export default function Destination() {
                   className="w-full px-4 py-2 rounded-md shadow-sm text-gray-900 ring-1 ring-gray-300 focus:ring-indigo-600"
                 />
               </div>
-
-              <div className="relative w-full lg:w-1/2">
+              <div className="relative">
                 <label htmlFor="month" className="text-gray-600">
                   Month
                 </label>
@@ -359,10 +357,7 @@ export default function Destination() {
                   <option value="December">December</option>
                 </select>
               </div>
-            </div>
-
-            <div className="flex flex-col lg:flex-row space-y-4 lg:space-y-0 lg:space-x-4">
-              <div className="relative w-full lg:w-1/2">
+              <div className="relative">
                 <label htmlFor="travelduration" className="text-gray-600">
                   Duration
                 </label>
@@ -384,8 +379,7 @@ export default function Destination() {
                   <option value="5 Days">5 Days</option>
                 </select>
               </div>
-
-              <div className="relative w-full lg:w-1/2">
+              <div className="relative">
                 <label htmlFor="specialrequirements" className="text-gray-600">
                   Special Requirements
                 </label>
@@ -400,9 +394,7 @@ export default function Destination() {
                   className="w-full px-4 py-2 rounded-md shadow-sm text-gray-900 ring-1 ring-gray-300 focus:ring-indigo-600"
                 />
               </div>
-            </div>
-            <div className="flex flex-col lg:flex-row space-y-4 lg:space-y-0 lg:space-x-4">
-              <div className="relative w-full">
+              <div className="relative col-span-1 lg:col-span-2">
                 <label htmlFor="activities" className="text-gray-600">
                   Activities
                 </label>
