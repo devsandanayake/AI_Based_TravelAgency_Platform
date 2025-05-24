@@ -63,18 +63,18 @@ export default function Feedback() {
     console.log("transformedData", transformedData);
 
     Swal.fire({
-      title: 'Processing...',
-      text: 'Please wait while we submit your data.',
+      title: "Processing...",
+      text: "Please wait while we submit your data.",
       allowOutsideClick: false,
       allowEscapeKey: false,
       didOpen: () => {
         Swal.showLoading();
-      }
+      },
     });
 
     try {
       const response = await axios.post(
-        "https://us-central1-custom-repeater-446305-a4.cloudfunctions.net/agency2",
+        "https://agency2-443968559259.us-central1.run.app",
         transformedData
       );
       console.log("Response Data:", response.data);

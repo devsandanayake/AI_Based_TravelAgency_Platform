@@ -42,7 +42,7 @@ function Signup() {
         const values = {
           email: email,
           uname: name,
-          uid: user?.uid,
+          id: user?.uid,
         };
 
         const userRef = ref(database, `user/${user.uid}`);

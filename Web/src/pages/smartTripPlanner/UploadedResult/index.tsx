@@ -10,14 +10,10 @@ export default function UploadedResult() {
   const parsedData = data ? JSON.parse(data as string) : null;
   console.log("parsedData", parsedData);
 
-  const recommendedTripPlan = parsedData?.prediction || "";
-  console.log("recommendedTripPlan", recommendedTripPlan);
-
-  const tripDays = recommendedTripPlan
-    ? recommendedTripPlan.match(/(Day\s\d+:[\s\S]*?)(?=Day\s\d+:|$)/g) || []
-    : [];
-
-  console.log("tripDays", tripDays);
+  const destinations = parsedData?.destinations || [];
+  const totalDuration = parsedData?.totalDuration || "";
+  const totalDistance = parsedData?.totalDistance || 0;
+  const month = parsedData?.month || "";
 
   return (
     <main className="flex flex-col h-screen w-screen">
@@ -36,25 +32,51 @@ export default function UploadedResult() {
         </div>
 
         <div className="w-1/2 h-full bg-white p-6 overflow-y-auto">
-          <h1 className="text-black font-bold text-xl mb-6">
-            Here is your smart trip plan. Enjoy your trip!
-          </h1>
+          <div className="mb-6">
+            <h1 className="text-black font-bold text-xl mb-2">
+              Your Smart Trip Plan
+            </h1>
+            <div className="text-gray-600 mb-4">
+              <p>Total Duration: {totalDuration}</p>
+              <p>Total Distance: {totalDistance} km</p>
+              <p>Travel Month: {month}</p>
+            </div>
+          </div>
+
           <div className="space-y-8">
-            {tripDays.length > 0 ? (
-              tripDays.map((day: string, index: number) => {
-                const lines: string[] = day.trim().split("\n");
+            {destinations.length > 0 ? (
+              destinations.map((destination: any, destIndex: number) => {
+                const tripPlan = destination.prediction || "";
+                const tripDays = tripPlan
+                  ? tripPlan.match(/(Day\s\d+:[\s\S]*?)(?=Day\s\d+:|$)/g) || []
+                  : [];
+
                 return (
-                  <div key={index} className="space-y-4">
-                    {lines.map((line: string, i: number) => (
-                      <p key={i} className="text-gray-700">
-                        {line.trim()}
-                      </p>
-                    ))}
+                  <div key={destIndex} className="border-b pb-6">
+                    <h2 className="text-lg font-semibold mb-4">
+                      Destination {destIndex + 1}
+                    </h2>
+                    {tripDays.length > 0 ? (
+                      tripDays.map((day: string, dayIndex: number) => {
+                        const lines: string[] = day.trim().split("\n");
+                        return (
+                          <div key={dayIndex} className="space-y-4 mb-4">
+                            {lines.map((line: string, i: number) => (
+                              <p key={i} className="text-gray-700">
+                                {line.trim()}
+                              </p>
+                            ))}
+                          </div>
+                        );
+                      })
+                    ) : (
+                      <p className="text-red-500">No trip details available.</p>
+                    )}
                   </div>
                 );
               })
             ) : (
-              <p className="text-red-500">No trip details available.</p>
+              <p className="text-red-500">No destinations available.</p>
             )}
           </div>
         </div>

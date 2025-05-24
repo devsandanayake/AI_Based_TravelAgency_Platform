@@ -108,6 +108,9 @@ export default function Niv() {
             <li>
               <Link href="/agencies/Feedback"><b>Feedback</b></Link>
             </li>
+            <li>
+            <Link href="/requests"><b>Feedback</b></Link>
+            </li>
           </ul>
         </div>
       </div>
@@ -123,6 +126,9 @@ export default function Niv() {
             </li>
             <li>
               <Link href="/agencies" className={linkClass("/agencies")}>Agencies</Link>
+            </li>
+            <li>
+            <Link href="/requests" className={linkClass("/requests")}>Requests</Link>
             </li>
           </ul>
         )}

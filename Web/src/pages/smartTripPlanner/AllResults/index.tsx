@@ -76,9 +76,19 @@ export default function UploadedResult() {
                   className="border p-4 rounded-md cursor-pointer shadow-sm hover:shadow-lg transition"
                   onClick={() => handleCardClick(item)}
                 >
-                  <p className="text-gray-800 font-semibold">
-                    Timestamp: {new Date(item.timestamp).toLocaleString()}
-                  </p>
+                  <div className="flex justify-between items-center">
+                    <p className="text-gray-800 font-semibold">
+                      {new Date(item.timestamp).toLocaleString()}
+                    </p>
+                    <div className="flex gap-4">
+                      <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">
+                        {item.totalDuration}
+                      </span>
+                      <span className="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm">
+                        {item.month}
+                      </span>
+                    </div>
+                  </div>
                 </div>
               ))
             ) : (
@@ -94,60 +104,71 @@ export default function UploadedResult() {
             Recommended Trip Plan
           </h2>
           <div className="space-y-5 text-gray-700">
-            {selectedData.prediction ? (
-              (() => {
-                const tripDays = selectedData.prediction
-                  ? selectedData.prediction.match(
-                      /Day\s\d+:[\s\S]*?(?=Day\s\d+:|$)/g
-                    ) || []
-                  : [];
+            {selectedData.destinations && selectedData.destinations.length > 0 ? (
+              selectedData.destinations.map((destination: any, index: number) => (
+                <div key={index} className="p-4 border rounded-md bg-gray-50">
+                  <h3 className="text-xl font-bold text-blue-600 mb-3">
+                    {selectedData.destinationsOrder[`Destination ${index + 1}`]}
+                  </h3>
+                  {destination.prediction ? (
+                    (() => {
+                      const tripDays = destination.prediction.match(
+                        /Day\s\d+:[\s\S]*?(?=Day\s\d+:|$)/g
+                      ) || [];
 
-                return tripDays.length > 0 ? (
-                  tripDays.map((day: string, index: number) => {
-                    const lines = day.trim().split("\n");
-                    return (
-                      <div
-                        key={index}
-                        className="p-4 border rounded-md bg-gray-50"
-                      >
-                        {lines.map((line: string, i: number) => {
-                          if (/^Days\s\d+:/.test(line)) {
-                            return (
-                              <p
-                                key={i}
-                                className="text-xl font-bold text-blue-600"
-                              >
-                                {line}
-                              </p>
-                            );
-                          } else if (
-                            /^Morning$|^Afternoon$|^Evening$/.test(line.trim())
-                          ) {
-                            return (
-                              <p
-                                key={i}
-                                className="text-lg font-semibold underline"
-                              >
-                                {line}
-                              </p>
-                            );
-                          } else {
-                            return (
-                              <p key={i} className="text-gray-700">
-                                {line.trim()}
-                              </p>
-                            );
-                          }
-                        })}
-                      </div>
-                    );
-                  })
-                ) : (
-                  <p className="text-red-500">No trip details available.</p>
-                );
-              })()
+                      return tripDays.length > 0 ? (
+                        tripDays.map((day: string, dayIndex: number) => {
+                          const lines = day.trim().split("\n");
+                          return (
+                            <div
+                              key={dayIndex}
+                              className="p-4 border rounded-md bg-white mb-4"
+                            >
+                              {lines.map((line: string, i: number) => {
+                                if (/^Day\s\d+:/.test(line)) {
+                                  return (
+                                    <p
+                                      key={i}
+                                      className="text-xl font-bold text-blue-600"
+                                    >
+                                      {line}
+                                    </p>
+                                  );
+                                } else if (
+                                  /^Morning$|^Afternoon$|^Evening$/.test(
+                                    line.trim()
+                                  )
+                                ) {
+                                  return (
+                                    <p
+                                      key={i}
+                                      className="text-lg font-semibold underline mt-3"
+                                    >
+                                      {line}
+                                    </p>
+                                  );
+                                } else {
+                                  return (
+                                    <p key={i} className="text-gray-700">
+                                      {line.trim()}
+                                    </p>
+                                  );
+                                }
+                              })}
+                            </div>
+                          );
+                        })
+                      ) : (
+                        <p className="text-red-500">No trip details available.</p>
+                      );
+                    })()
+                  ) : (
+                    <p className="text-red-500">No trip plan available.</p>
+                  )}
+                </div>
+              ))
             ) : (
-              <p className="text-red-500">No trip plan available.</p>
+              <p className="text-red-500">No destinations available.</p>
             )}
           </div>
         </Modal>

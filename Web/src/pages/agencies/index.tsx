@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { useState } from "react";
 import axios from "axios";
-import { ref, push, set } from "firebase/database";
+import { ref, push, set, get } from "firebase/database";
 import NIV from "@/components/niv";
 import { app, database } from "../../../firebaseconfig";
 import image3 from "../../../public/assets/7.jpg";
@@ -73,7 +73,8 @@ export default function Destination() {
 
     try {
       const response = await axios.post(
-        "https://us-central1-custom-repeater-446305-a4.cloudfunctions.net/agency",
+        // "https://us-central1-custom-repeater-446305-a4.cloudfunctions.net/agency",
+        "https://agency-443968559259.us-central1.run.app",
         transformedData
       );
       console.log("Response Data:", response.data);
@@ -87,18 +88,18 @@ export default function Destination() {
       const agency = prediction[0];
       console.log("Extracted Agency:", agency);
 
-      const dataWithAgency = {
-        ...transformedData.features,
-        Agency: agency,
-      };
+      // const dataWithAgency = {
+      //   ...transformedData.features,
+      //   Agency: agency,
+      // };
 
-      console.log("Data with Agency:", dataWithAgency);
+      // console.log("Data with Agency:", dataWithAgency);
 
-      const agencyResponse = await axios.post(
-        "https://us-central1-custom-repeater-446305-a4.cloudfunctions.net/agency2",
-        { features: dataWithAgency }
-      );
-      console.log("Agency Response:", agencyResponse.data);
+      // const agencyResponse = await axios.post(
+      //   "https://us-central1-custom-repeater-446305-a4.cloudfunctions.net/agency2",
+      //   { features: dataWithAgency }
+      // );
+      // console.log("Agency Response:", agencyResponse.data);
 
       const id = localStorage.getItem("id");
       if (!id) {
@@ -112,10 +113,116 @@ export default function Destination() {
       const dataToStore = {
         ...response.data,
         timestamp: new Date().toISOString(),
+        transformedData: transformedData,
       };
 
       const tripRef = ref(database, `travel_agency/${id}`);
       await push(tripRef, dataToStore);
+
+      const [travelAgencySnapshot, usersSnapshot] = await Promise.all([
+        get(ref(database, "travel_agency")),
+        get(ref(database, "user")),
+      ]);
+
+      const allTrips = travelAgencySnapshot.val();
+      const allUsers = usersSnapshot.val();
+
+      if (formData.num_persons === "1") {
+        const matchingTrips = [];
+
+        for (const userId in allTrips) {
+          for (const tripId in allTrips[userId]) {
+            const trip = allTrips[userId][tripId];
+            if (
+              trip.transformedData?.features?.Place === formData.location &&
+              trip.transformedData?.features["Number of Persons"] ===
+                formData.num_persons &&
+              trip.transformedData?.features["Favorite Activities"] ===
+                formData.favorite_activities &&
+              trip.transformedData?.features.Month === formData.month &&
+              userId !== id
+            ) {
+              const userData = allUsers[userId];
+              matchingTrips.push({
+                userId,
+                tripId,
+                uname: userData?.uname || "Anonymous User",
+                email: userData?.email,
+              });
+            }
+          }
+        }
+
+        if (matchingTrips.length > 0) {
+          const { value: selectedTrips } = await Swal.fire({
+            title: "Found Matching Travelers!",
+            html: `
+              <div class="text-left">
+                <p>We found ${
+                  matchingTrips.length
+                } travelers with similar preferences:</p>
+                <div class="max-h-60 overflow-y-auto mt-2">
+                  ${matchingTrips
+                    .map(
+                      (trip) =>
+                        `<div class="flex items-center mb-2">
+                      <input type="checkbox" id="user_${trip.userId}_${trip.tripId}" 
+                             class="mr-2" value="${trip.userId},${trip.tripId}">
+                      <label for="user_${trip.userId}_${trip.tripId}">
+                        ${trip.uname} (${trip.email})
+                      </label>
+                    </div>`
+                    )
+                    .join("")}
+                </div>
+              </div>
+            `,
+            showCancelButton: true,
+            confirmButtonText: "Send Requests",
+            cancelButtonText: "Skip",
+            preConfirm: () => {
+              const checkboxes = document.querySelectorAll(
+                'input[type="checkbox"]:checked'
+              ) as NodeListOf<HTMLInputElement>;
+              return Array.from(checkboxes).map((cb) => cb.value);
+            },
+          });
+
+          if (selectedTrips && selectedTrips.length > 0) {
+            const requestRef = ref(database, "requests");
+
+            for (const selectedTrip of selectedTrips) {
+              const [selectedUserId, selectedTripId] = selectedTrip.split(",");
+
+              const newRequestRef = push(requestRef);
+              await set(newRequestRef, {
+                fromUserId: id,
+                fromUserName: allUsers[id]?.uname,
+                toUserId: selectedUserId,
+                toUserName: allUsers[selectedUserId]?.uname,
+                tripId: selectedTripId,
+                status: "pending",
+                timestamp: new Date().toISOString(),
+              });
+
+              await axios.post("https://email-443968559259.us-central1.run.app", {
+                email: [allUsers[selectedUserId]?.email],
+                transformData: transformedData,
+                receiver_name: allUsers[selectedUserId]?.uname,
+                sender_name: allUsers[id]?.uname,
+              });
+            }
+
+            await Swal.fire({
+              title: "Requests Sent!",
+              text: `Your travel buddy requests have been sent to ${selectedTrips.length} travelers!`,
+              icon: "success",
+              confirmButtonText: "OK",
+            });
+          }
+        }
+      }
+
       Swal.fire({
         title: "Success!",
         text: "Agency Created Successfully !",

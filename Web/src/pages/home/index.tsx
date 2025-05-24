@@ -17,13 +17,12 @@ export default function Home() {
     <main>
       <NIV />
       <div className="relative">
-        <video
-          className=" object-cover w-full h-full"
-          src="/assets/main.mp4"
-          autoPlay
-          loop
-          muted
+        <Image
+          className="mx-auto w-screen h-[100vh] w-auto"
+          src={image3}
+          alt="Your Company"
         />
+
         <div className="absolute top-10 text-white font-poppins">
           <h1
             className="text-6xl font-bold text-blue-700"
